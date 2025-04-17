@@ -1,0 +1,11 @@
+scratchpad_space = 8
+launch_timeout = 5
+
+[[scratchpad]]
+name = "alacritty"
+target_type = "title"
+target = "AlacrittyScratchpad"
+position = [190, 130]
+size = [1100, 700]
+launch_type = "command"
+launch_command = "/Applications/Alacritty.app/Contents/MacOS/alacritty --title AlacrittyScratchpad"
