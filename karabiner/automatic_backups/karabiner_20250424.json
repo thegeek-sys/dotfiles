@@ -100,10 +100,15 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "parameters": {
-                                    "basic.to_if_alone_timeout_milliseconds": 60,
-                                    "basic.to_if_held_down_threshold_milliseconds": 60
+                                    "basic.to_delayed_action_delay_milliseconds": 70,
+                                    "basic.to_if_held_down_threshold_milliseconds": 70
                                 },
-                                "to_after_key_up": [{ "key_code": "escape" }],
+                                "to_if_alone": [
+                                    {
+                                        "halt": true,
+                                        "key_code": "escape"
+                                    }
+                                ],
                                 "to_if_held_down": [
                                     {
                                         "key_code": "left_command",
