@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INTERFACE="en0"  # Cambia in "en1" se usi un'altra interfaccia di rete
+INTERFACE="en0"
 TEMP_FILE="/tmp/sketchybar_netstat"
 
 # Ottieni i byte attuali

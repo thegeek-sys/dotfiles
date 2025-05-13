@@ -7,7 +7,7 @@ vim.cmd("set shiftwidth=4")
 --vim.keymap.set('n', '<leader>w', '<C-w>', { noremap = true, silent = true })
 
 vim.keymap.set('n', ' w', '<C-w>', {})
-vim.g.mapleader = " "
+vim.g.mapleader = "`"
 vim.keymap.set('', '<up>', function () print('you can do it'); end)
 vim.keymap.set('', '<down>', function () print('still in hard mode'); end)
 vim.keymap.set('', '<left>', function () print('i believe in you'); end)

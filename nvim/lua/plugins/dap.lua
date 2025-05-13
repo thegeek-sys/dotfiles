@@ -10,6 +10,11 @@ return {
 		config = function()
 			local dap = require("dap")
 			local dap_python = require("dap-python")
+			dap.adapters.cppdbg = {
+				id = 'cppdbg',
+				type = 'executable',
+				command = '/Users/fla/.local/share/nvim/cpptools/extension/debugAdapters/bin/OpenDebugAD7', -- cambia questo!
+			}
 
 			-- Imposta l'adapter per Python
 			dap_python.setup("~/.virtualenvs/debugpy/bin/python") -- Cambia il percorso se necessario
@@ -26,6 +31,31 @@ return {
 					end,
 				},
 			}
+
+
+			dap.configurations.c = {
+				{
+					name = "Launch file",
+					type = "cppdbg",
+					request = "launch",
+					program = function()
+						return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+					end,
+					cwd = '${workspaceFolder}',
+					stopAtEntry = true,
+					setupCommands = {
+						{
+							text = '-enable-pretty-printing',
+							description =  'enable pretty printing',
+							ignoreFailures = false
+						},
+					},
+				},
+			}
+
+			-- Puoi anche aggiungere dap.configurations.cpp se vuoi usarlo anche per C++
+			dap.configurations.cpp = dap.configurations.c
+
 
 			-- Configura UI
 			require("dapui").setup()
