@@ -43,3 +43,6 @@ yabai -m rule --add app="^Kodi$" manage=off
 yabai -m rule --add app="^VLC$" manage=off
 
 yabai -m config external_bar all:32:0
+
+# jankyborders
+borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0 &
