@@ -15,7 +15,10 @@ return {
 					"arduino_language_server",
 					"html",
 					"pyright",
-					"clangd"
+					"clangd",
+					"gopls",
+					"cssls",
+					"emmet_ls",
 				},
 			})
 		end,
@@ -30,6 +33,9 @@ return {
 			vim.lsp.config("ts_ls", {})
 			vim.lsp.config("pyright", {})
 			vim.lsp.config("clangd", {})
+			vim.lsp.config("gopls", {})
+			vim.lsp.config("cssls", {})
+			vim.lsp.config("emmet_ls", {})
 
 			-- abilita i server che hai configurato
 			vim.lsp.enable({
@@ -37,9 +43,12 @@ return {
 				"jdtls",
 				"arduino_language_server",
 				"html",
+				"cssls",
+				"emmet_ls",
 				"ts_ls",
 				"pyright",
 				"clangd",
+				"gopls",
 			})
 
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})

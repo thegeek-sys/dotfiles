@@ -7,6 +7,14 @@ return {
 			local builtin = require("telescope.builtin")
 			vim.keymap.set('n', '<leader>p', builtin.find_files, {})
 			vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+			vim.keymap.set('n', '<leader>P', function()
+				builtin.find_files({
+					attach_mappings = function(_, map)
+						map('i', '<CR>', require('telescope.actions').select_tab)
+						return true
+					end
+				})
+end, { desc = 'Cerca file e apri in tab' })
 		end
 	},
 	{
